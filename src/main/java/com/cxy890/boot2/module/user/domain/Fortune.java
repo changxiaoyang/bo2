@@ -1,4 +1,4 @@
-package com.cxy890.boot2.model.domain;
+package com.cxy890.boot2.module.user.domain;
 
 import lombok.Data;
 

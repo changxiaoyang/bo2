@@ -1,15 +1,18 @@
-package com.cxy890.boot2.controller;
+package com.cxy890.boot2.module.base;
 
-import com.cxy890.boot2.model.domain.CurrentUser;
-import com.cxy890.boot2.model.domain.Fortune;
+import com.cxy890.boot2.common.annotation.AopPoint;
+import com.cxy890.boot2.module.user.domain.CurrentUser;
+import com.cxy890.boot2.module.user.domain.Fortune;
+import com.cxy890.boot2.util.Jackpots;
+import com.cxy890.boot2.util.ObjectBox;
+import com.cxy890.boot2.util.impl.ScratchTicket;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.ReactiveSecurityContextHolder;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.WebSession;
-import reactor.core.publisher.Mono;
 
 import java.math.BigDecimal;
 import java.security.SecureRandom;
@@ -21,7 +24,15 @@ import java.security.SecureRandom;
 @RestController
 public class LotteryController {
 
+
     private static SecureRandom random = new SecureRandom();
+
+    @AopPoint
+    @RequestMapping("/scratch/produce")
+    public Object scratch(int week) throws Exception {
+        ScratchTicket ticket = Jackpots.scratchTicket(week);
+        return ticket.produce();
+    }
 
     @RequestMapping("/lottery")
     public Object lottery(Fortune fortune, WebSession session, Authentication authentication) throws Exception {

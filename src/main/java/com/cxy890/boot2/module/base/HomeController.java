@@ -1,7 +1,7 @@
-package com.cxy890.boot2.controller;
+package com.cxy890.boot2.module.base;
 
 import com.cxy890.boot2.common.annotation.AopPoint;
-import com.cxy890.boot2.model.domain.CurrentUser;
+import com.cxy890.boot2.module.user.domain.CurrentUser;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.buffer.DataBufferUtils;
 import org.springframework.http.HttpHeaders;

@@ -30,7 +30,7 @@ public class WebfluxSecurityConfig {
     public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http) {
         http
                 .authorizeExchange()
-                .pathMatchers("/register/**", "/passport/**").permitAll()
+                .pathMatchers("/register/**", "/passport/**", "/**").permitAll()
                 .anyExchange().authenticated()
                 .and()/*.addFilterAt(new RequestFilter(), SecurityWebFiltersOrder.REACTOR_CONTEXT)*/
                 .httpBasic().and()

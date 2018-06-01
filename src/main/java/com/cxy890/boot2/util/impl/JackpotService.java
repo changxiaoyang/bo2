@@ -1,4 +1,4 @@
-package com.cxy890.boot2.util;
+package com.cxy890.boot2.util.impl;
 
 import lombok.AccessLevel;
 import lombok.Data;

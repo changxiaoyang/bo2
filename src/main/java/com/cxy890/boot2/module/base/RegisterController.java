@@ -1,6 +1,6 @@
-package com.cxy890.boot2.controller;
+package com.cxy890.boot2.module.base;
 
-import com.cxy890.boot2.service.UserDetailServiceImpl;
+import com.cxy890.boot2.module.user.service.UserDetailServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

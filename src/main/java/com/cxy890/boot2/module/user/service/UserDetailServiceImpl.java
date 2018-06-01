@@ -1,7 +1,7 @@
-package com.cxy890.boot2.service;
+package com.cxy890.boot2.module.user.service;
 
-import com.cxy890.boot2.model.domain.CurrentUser;
-import com.cxy890.boot2.model.repository.UserRepository;
+import com.cxy890.boot2.module.user.domain.CurrentUser;
+import com.cxy890.boot2.module.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.ReactiveUserDetailsService;
